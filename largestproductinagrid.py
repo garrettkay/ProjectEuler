@@ -41,17 +41,12 @@ def split0(array):
 	return np.split(array,indices)
 
 subgrids = []
-
 for i in range(20):
 	subgrids.extend(split0(grid[i]))
 	subgrids.extend(split0(grid[:,i]))
-
 for i in range(-16,17):
 	subgrids.extend(split0(np.diagonal(grid,offset = i)))
 	subgrids.extend(split0(np.diagonal(flipgrid,offset = i)))
-
-print(subgrids)
-print(len(subgrids))
 
 maxproduct = 1
 for subgrid in subgrids:
