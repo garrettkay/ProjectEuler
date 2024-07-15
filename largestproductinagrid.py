@@ -1,6 +1,6 @@
-import numpy
+import numpy as np
 
-grid = numpy.array([
+grid = np.array([
 	[ 8,  2, 22, 97, 38, 15,  0, 40,  0, 75,  4,  5,  7, 78, 52, 12, 50, 77, 91,  8],
 	[49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48,  4, 56, 62,  0],
 	[81, 49, 31, 73, 55, 79, 14, 29, 93, 71, 40, 67, 53, 88, 30,  3, 49, 13, 36, 65],
@@ -21,6 +21,7 @@ grid = numpy.array([
 	[20, 69, 36, 41, 72, 30, 23, 88, 34, 62, 99, 69, 82, 67, 59, 85, 74,  4, 36, 16],
 	[20, 73, 35, 29, 78, 31, 90,  1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57,  5, 54],
 	[ 1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52,  1, 89, 19, 67, 48]])
+flipgrid = np.fliplr(grid)
 
 def max4product(series):
 	if len(series) < 4:
@@ -36,11 +37,25 @@ def max4product(series):
 	return maxproduct
 
 def split0(array):
-	index0 = numpy.extract(array == 0,array)[::-1]
-	arrays = []
-	for index in index0:
-		numpy.append(arrays,array[index + 1:])
-		arrays = array[:index]
-	return arrays
+	indices = np.where(array == 0)[0]
+	return np.split(array,indices)
 
-print(split0(numpy.array([ 8,  2, 22, 97, 38, 15,  0, 40,  0, 75,  4,  5,  7, 78, 52, 12, 50, 77, 91,  8])))
+subgrids = []
+
+for i in range(20):
+	subgrids.extend(split0(grid[i]))
+	subgrids.extend(split0(grid[:,i]))
+
+for i in range(-16,17):
+	subgrids.extend(split0(np.diagonal(grid,offset = i)))
+	subgrids.extend(split0(np.diagonal(flipgrid,offset = i)))
+
+print(subgrids)
+print(len(subgrids))
+
+maxproduct = 1
+for subgrid in subgrids:
+	testproduct = max4product(np.trim_zeros(subgrid))
+	if testproduct > maxproduct:
+		maxproduct = testproduct
+print(maxproduct)
