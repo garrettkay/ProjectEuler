@@ -3,15 +3,16 @@ import sympy
 def consecutiveprimesum():
 	maxprime = 0
 	maxlen = 0
-	for start in range(100000):
+	for start in range(1000):
 		sum = 0
-		for i in range(1,100000):
+		for i in range(1,1000):
 			sum += sympy.prime(i + start)
 			if sum >= 1000000:
-				if i - 1 < maxlen:
+				if i <= maxlen:
+					print("finished, no sequences with greater than " + str(maxlen) + " terms are possible")
 					return
 				break
-			if sympy.isprime(sum) and i > maxlen:
+			if i > maxlen and sympy.isprime(sum):
 				print(sum)
 				print(i)
 				maxprime = sum
