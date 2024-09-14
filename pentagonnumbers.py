@@ -8,10 +8,9 @@ def simpentagonal(upperbound):
 		for a in range(1,b):
 			penta = int((3 * a - 1) * a / 2)
 			if ispentagonal(penta + pentb) and ispentagonal(pentb - penta):
-				print("found " + str(pentb - penta))
-				print(penta)
-				print(pentb)
-				print(penta + pentb)
+				print("found values " + str(penta) + " and " + str(pentb))
+				print("difference is pentagonal: " + str(pentb - penta))
+				print("sum is pentagonal: " + str(penta + pentb))
 				return 0
 			
 def ispentagonal(n):
