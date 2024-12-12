@@ -1,5 +1,4 @@
 import math
-import numpy
 import sympy
 
 tri = lambda x : (x * (x + 1)) // 2
@@ -11,6 +10,7 @@ while tri(value) < 250*250:
 print(value)
 
 # finding smallest triangular number greater than 250*250 (at value = 354)
+# (a number with 500 divisors must have 250 divisors less than its square root)
 '''
 
 value = 350
