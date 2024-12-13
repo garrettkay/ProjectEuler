@@ -4,7 +4,7 @@ import time
 primes = dict()
 primelist = list(sympy.sieve.primerange(1,10**6))
 for i in range(len(primelist)):
-	primes.update({i+1:primelist[i]})
+	primes[i+1] = primelist[i]
 
 concat2primes = dict()
 concat3primes = dict()
@@ -27,7 +27,7 @@ def findconcat2primes(upper):
 			if isconcat2prime(p1,p2):
 				concataprimes.add(b)
 		if len(concataprimes) > 0:
-			concat2primes.update({a:concataprimes})
+			concat2primes[a] = concataprimes
 
 def findconcat3primes():
 	for a in concat2primes.keys():
@@ -42,7 +42,7 @@ def findconcat3primes():
 							if a in concat3primes.keys():
 								concat3primes[a].add((b,c))
 							else:
-								concat3primes.update({a:{(b,c)}})
+								concat3primes[a] = {(b,c)}
 					except:
 						continue
 
@@ -55,7 +55,7 @@ def findconcat4primes():
 						if a in concat4primes.keys():
 							concat4primes[a].add((b,c,d))
 						else:
-							concat4primes.update({a:{(b,c,d)}})
+							concat4primes[a] = {(b,c,d)}
 			except:
 				continue
 
@@ -68,7 +68,7 @@ def findconcat5primes():
 						if a in concat5primes.keys():
 							concat5primes[a].add((b,c,d,e))
 						else:
-							concat5primes.update({a:{(b,c,d,e)}})
+							concat5primes[a] = {(b,c,d,e)}
 			except:
 				continue
 

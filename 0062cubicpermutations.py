@@ -19,7 +19,7 @@ def findcubicpermutations():
 		cubeset = generatecubes()
 		cubedigits = dict()
 		for cube in cubeset:
-			cubedigits.update({cube:sorted(map(int,str(cube)))})
+			cubedigits[cube] = sorted(map(int,str(cube)))
 		values = sorted(cubedigits.values())
 		for i in range(len(values) - 4):
 			if values[i] == values[i + 1] and values[i] == values[i + 2] and values[i] == values[i + 3] and values[i] == values[i + 4]:

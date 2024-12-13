@@ -8,13 +8,13 @@ def primefactorize(n):
 		return primefactors[n]
 	except:
 		if sympy.isprime(n):
-			primefactors.update({n:{n}})
+			primefactors[n] = {n}
 			return {n}
 		for i in range(2,math.isqrt(n) + 1):
 			if n % i == 0:
 				factors1 = primefactorize(i)
 				factors2 = primefactorize(n//i)
-				primefactors.update({n:factors1.union(factors2)})
+				primefactors[n] = factors1.union(factors2)
 				return factors1.union(factors2)
 
 nphiratio = dict()
