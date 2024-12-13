@@ -1,9 +1,8 @@
 import math
 import numpy as np
-import time
 
 def abundant(n):
-	factors = set([1])
+	factors = {1}
 	for i in range(2,int(math.sqrt(n)) + 1):
 		if n % i == 0:
 			factors.update({i,n//i})

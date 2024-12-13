@@ -16,7 +16,7 @@ for a in range(1,293):
 					max = ptriple[a + b + int(c)]
 					value = a + b + int(c)
 			except:
-				ptriple.update({a + b + int(c):1})
+				ptriple[a + b + int(c)] = 1
 
 print(ptriple)
 print({value:max})

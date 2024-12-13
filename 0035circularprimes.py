@@ -1,7 +1,7 @@
 import itertools
 import sympy
 
-circularprimes = set([2,5])
+circularprimes = {2,5}
 primes = set()
 
 for r in range(1,7):

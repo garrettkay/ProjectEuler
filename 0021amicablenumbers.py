@@ -1,17 +1,16 @@
 import math
 
-factors = {1:{1}}
-factors.update({2:{1:2}})
+factors = {1:{1},2:{1:2}}
 
 def factorize(n):
-	factors = set([1])
+	factors = {1}
 	for i in range(2,int(math.sqrt(n)) + 1):
 		if n % i == 0:
 			factors.update({i,n//i})
 	return factors
 
 for i in range(3,10000):
-	factors.update({i:factorize(i)})
+	factors[i] = factorize(i)
 
 sumammicable = 0
 for i in range(2,10000):

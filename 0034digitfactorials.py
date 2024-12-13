@@ -1,7 +1,4 @@
-import time
 from itertools import combinations_with_replacement as combr
-
-start = time.time()
 
 fact = {
 	0:1,

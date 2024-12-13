@@ -1,7 +1,5 @@
 import math
 
-pentnums = dict()
-
 def simpentagonal(upperbound):
 	for b in range(1,upperbound):
 		pentb = int((3 * b - 1) * b / 2)
