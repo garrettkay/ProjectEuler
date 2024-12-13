@@ -14,6 +14,13 @@ def rootperiod(n):
 			break
 	return (len(frac) - 1,frac)
 
+def expandfraction(contfrac):
+	num = 1
+	den = 0
+	for value in contfrac.__reversed__():
+		num,den = value*num + den,num
+	return num,den
+
 maxX = 0
 maxY = 0
 maxD = 0
@@ -23,13 +30,7 @@ for D in range(1,1001):
 		xyapprox = ([int(contfrac[1][0][:-1])] + contfrac[1][1:])[:-1]
 	else:
 		xyapprox = ([int(contfrac[1][0][:-1])] + 2 * contfrac[1][1:])[:-1]
-	num = 1
-	den = 0
-	for value in xyapprox.__reversed__():
-		num,den = value*num + den,num
-	x = num
-	y = den
-	# print(y,"** 2 *",D,"+ 1 =",x,"** 2")
+	x,y = expandfraction(xyapprox)
 	if x > maxX:
 		maxX = x
 		maxY = y
