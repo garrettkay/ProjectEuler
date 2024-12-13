@@ -19,5 +19,4 @@ for a in range(1,293):
 				ptriple.update({a + b + int(c):1})
 
 print(ptriple)
-print(value)
-print(max)
+print({value:max})

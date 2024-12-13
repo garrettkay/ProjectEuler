@@ -24,5 +24,4 @@ for i in range(1,1000):
 		valuemax = i
 		cyclemax = cycle
 
-print(valuemax)
-print(cyclemax)
+print(str(valuemax),"has cycle of length",str(cyclemax))

@@ -13,15 +13,15 @@ digitpowers = {
 }
 
 for i in range(354295):
-	print(i)
 	n = i
-	sum = 0
+	powersum = 0
 	while n != 0:
-		sum += digitpowers[n % 10]
-		if sum > i:
+		powersum += digitpowers[n % 10]
+		if powersum > i:
 			break
 		n //= 10
-	if sum == i:
+	if powersum == i:
 		sumoffifths.append(i)
 
 print(sumoffifths)
+print(sum(sumoffifths[2:]))

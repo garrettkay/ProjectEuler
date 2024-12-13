@@ -23,9 +23,11 @@ def findcubicpermutations():
 		values = sorted(cubedigits.values())
 		for i in range(len(values) - 4):
 			if values[i] == values[i + 1] and values[i] == values[i + 2] and values[i] == values[i + 3] and values[i] == values[i + 4]:
+				cubeperms = []
 				for key in cubedigits.keys():
 					if cubedigits[key] == values[i]:
-						print(key)
-				return
-			
-findcubicpermutations()
+						cubeperms.append(key)
+				return cubeperms
+
+cubeperms = findcubicpermutations()
+print(sorted(cubeperms))

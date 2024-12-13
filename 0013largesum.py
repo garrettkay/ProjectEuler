@@ -104,4 +104,4 @@ numbers = [
 sum = 0
 for number in numbers:
 	sum += int(number[:12])
-print(sum)
+print(int(str(sum)[:10]))

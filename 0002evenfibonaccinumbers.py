@@ -7,4 +7,4 @@ while n1 < 4000000:
     n1 = temp
 
 sumfibonacci = n2 - 1
-print(sumfibonacci/2)
+print(int(sumfibonacci/2))

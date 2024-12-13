@@ -16,5 +16,6 @@ for key in keys:
 		print(decodedmessage)
 		'''
 
-
-print(sum(map(ord,decrypt(cipher,(101, 120, 112)))))
+message = decrypt(cipher,(101, 120, 112))
+print(message)
+print(sum(map(ord,message)))

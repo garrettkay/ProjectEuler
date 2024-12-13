@@ -6,7 +6,6 @@ maxkey = 1
 maxseq = 1
 
 for n in range (2,1000000):
-	print(n)
 	seq = []
 	i = n
 	while True:
@@ -26,5 +25,4 @@ for n in range (2,1000000):
 			else:
 				i = 3 * i + 1
 
-print(maxkey)
-print(maxseq)
+print("Starting value of:",str(maxkey),"Gives sequence of length:",str(maxseq))

@@ -18,4 +18,4 @@ for serum in series:
     serumproduct = max13product(serum)
     if serumproduct > maxproduct:
         maxproduct = serumproduct
-print(maxproduct)
+print(int(maxproduct))

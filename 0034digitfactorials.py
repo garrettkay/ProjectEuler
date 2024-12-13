@@ -32,5 +32,4 @@ for r in range(1,8):
 
 print(digitfactorials)
 
-end = time.time()
-print(end-start)
+print(sum(digitfactorials[2:]))

@@ -24,8 +24,6 @@ bmax = 0
 nmax = 0
 for b in primes1000:
 	for a in range(-999,1000):
-		print("a is " + str(a))
-		print("b is " + str(b))
 		n = 0
 		while True:
 			if not isPrime(quad(a,b,n)):
@@ -33,10 +31,7 @@ for b in primes1000:
 					amax = a
 					bmax = b
 					nmax = n
-				print("n is " + str(n))
 				break
 			n += 1
 
-print(amax)
-print(bmax)
-print(nmax)
+print("n ** 2 +",str(amax),"* n +",str(bmax),"gives primes for n from 0 to",str(nmax - 1))

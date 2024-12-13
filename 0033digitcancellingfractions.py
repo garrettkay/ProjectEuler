@@ -1,4 +1,5 @@
 import itertools
+import math
 
 permutations = itertools.permutations([1,2,3,4,5,6,7,8,9],3)
 dcf = []
@@ -16,3 +17,12 @@ for perm in permutations:
 		dcf.append((perm[2] * 10 + perm[0],perm[2] * 10 + perm[1]))
 
 print(dcf)
+
+num = 1
+den = 1
+for frac in dcf:
+	num *= frac[0]
+	den *= frac[1]
+gcd = math.gcd(num,den)
+
+print(str(num),"/",str(den),"=",str(int(num/gcd)),"/",str(int(den/gcd)))

@@ -25,8 +25,5 @@ for i in range(2,1000000):
 	else:
 		count = 0
 	if count == 4:
-		print(i-3)
-		print(i-2)
-		print(i-1)
-		print(i)
+		print(i-3,i-2,i-1,i)
 		break

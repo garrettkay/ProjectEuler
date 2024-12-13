@@ -9,15 +9,14 @@ def consecutiveprimesum():
 			sum += sympy.prime(i + start)
 			if sum >= 1000000:
 				if i <= maxlen:
-					print("finished, no sequences with greater than " + str(maxlen) + " terms are possible")
+					print("finished, no sequences with greater than",str(maxlen),"terms are possible")
+					print(maxprime)
+					print(maxlen)
 					return
 				break
 			if i > maxlen and sympy.isprime(sum):
-				print(sum)
-				print(i)
 				maxprime = sum
 				maxlen = i
-	print(maxprime)
-	print(maxlen)
+	
 
 consecutiveprimesum()

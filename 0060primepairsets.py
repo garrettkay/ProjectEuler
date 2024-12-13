@@ -79,6 +79,6 @@ findconcat5primes()
 
 for a in concat5primes.keys():
 	for (b,c,d,e) in concat5primes[a]:
-		print(a,b,c,d,e)
-		print(primes[a],primes[b],primes[c],primes[d],primes[e])
+		print("Indices:",a,b,c,d,e)
+		print("Primes:",primes[a],primes[b],primes[c],primes[d],primes[e])
 		print(primes[a] + primes[b] + primes[c] + primes[d] + primes[e])

@@ -1,4 +1,6 @@
 import math
+import numpy as np
+import time
 
 def abundant(n):
 	factors = set([1])
@@ -19,12 +21,9 @@ for n in range(1,28124):
 abundantsums = set()
 
 for num1 in abundantnums:
-	# Iterate through each element in the second set
 	for num2 in abundantnums:
-		# Compute the sum and add it to the result set
 		abundantsums.add(num1 + num2)
-
-print(abundantsums)
+print(np.array(list(abundantsums)))
 
 sum = 0
 for i in range(1,28124):

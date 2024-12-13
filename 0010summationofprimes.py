@@ -11,4 +11,4 @@ for i in range(1,1000000):
     primes = np.delete(primes,((primes > primes[i]) & (primes % primes[i] == 0)))
 
 print(primes)
-print(np.sum(primes))
+print(int(np.sum(primes)))

@@ -6,6 +6,6 @@ def sumsquares(n):
         sum += i**2
     return sum
 
-print(sumsquared(100))
-print(sumsquares(100))
-print(sumsquared(100) - sumsquares(100))
+ssd = int(sumsquared(100))
+sss = sumsquares(100)
+print(str(ssd),"-",str(sss),"=",str(ssd - sss))

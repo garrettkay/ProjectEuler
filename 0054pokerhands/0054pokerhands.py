@@ -1,6 +1,6 @@
 import numpy as np
 
-hands = np.loadtxt('pokerhands\\pokerhands.txt',dtype=str,delimiter=" ")
+hands = np.loadtxt('0054pokerhands\\pokerhands.txt',dtype=str,delimiter=" ")
 
 cardvalues = {
     '2': 2,

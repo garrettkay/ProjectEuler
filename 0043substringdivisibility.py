@@ -9,9 +9,11 @@ def issubdivisible(permstring):
 			return False
 	return True
 
-sum = 0
+subdivpandigitals = []
 for perm in perms:
 	permstring = "".join(map(str,perm))
 	if issubdivisible(permstring):
-		sum += int(permstring)
-print(sum)
+		subdivpandigitals.append(int(permstring))
+
+print(subdivpandigitals)
+print(sum(subdivpandigitals))

@@ -8,3 +8,4 @@ for i in range(9000,10000):
 		pandigitalmultiples.append(i * 100000 + i * 2)
 
 print(pandigitalmultiples)
+print(max(pandigitalmultiples))

@@ -11,7 +11,6 @@ def factorize(n):
 	return factors
 
 for i in range(3,10000):
-	print(i)
 	factors.update({i:factorize(i)})
 
 sumammicable = 0

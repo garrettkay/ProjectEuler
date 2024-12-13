@@ -53,4 +53,4 @@ for subgrid in subgrids:
 	testproduct = max4product(np.trim_zeros(subgrid))
 	if testproduct > maxproduct:
 		maxproduct = testproduct
-print(maxproduct)
+print(int(maxproduct))
