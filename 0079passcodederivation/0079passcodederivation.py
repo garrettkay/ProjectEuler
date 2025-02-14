@@ -1,6 +1,6 @@
 edges = set()
 
-with open("0079passcodederivation/0079_keylog.txt", 'r') as file:
+with open("0079passcodederivation\\0079_keylog.txt", 'r') as file:
 	for line in file:
 		edges.add((int(line[0]),int(line[1])))
 		edges.add((int(line[1]),int(line[2])))
