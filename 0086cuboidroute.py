@@ -17,8 +17,6 @@ for m in range(2,500):
 sum = 0
 for i in range(1000000):
 	sum += integerpaths[i]
-	if i == 99 or i == 100:
-		print(i,sum)
 	if sum > 1000000:
 		print(i,sum)
 		break
