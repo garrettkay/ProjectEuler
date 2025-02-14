@@ -10,3 +10,5 @@ for m in range(2,31623):
 			sum += 3 * c + 1
 
 print(sum)
+
+# solution in ~ 45s, faster algorithm using diophantine equation is known
