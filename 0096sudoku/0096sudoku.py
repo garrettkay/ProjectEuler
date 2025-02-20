@@ -1,5 +1,4 @@
 import copy
-import numpy as np
 
 def solveboard(b):
 	board = copy.deepcopy(b)
