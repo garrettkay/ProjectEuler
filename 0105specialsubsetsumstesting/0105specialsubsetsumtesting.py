@@ -1,5 +1,8 @@
 import itertools
 
+with open('0105specialsubsetsumstesting\\0105_sets.txt', 'r') as file:
+	specialsets = [list(map(int, line.strip().split(','))) for line in file]
+
 def isspecialsumset(specialset):
 	specialset = sorted(specialset)
 	for i in range(1,len(specialset) + 1 // 2):
@@ -15,14 +18,8 @@ def isspecialsumset(specialset):
 				sums.add(subsetsum)
 	return True
 
-bestspecialsum = 1000
-bestspecialsumset = []
-for i in range(25):
-	testset = [i,i + 11,i + 18,i + 19,i + 20,i + 22,i + 25]
-	if sum(testset) > bestspecialsum:
-		continue
-	if isspecialsumset(testset):
-		bestspecialsum = sum(testset)
-		bestspecialsumset = testset
-
-print(bestspecialsumset,bestspecialsum)
+total = 0
+for specialset in specialsets:
+	if isspecialsumset(specialset):
+		total += sum(specialset)
+print(total)
